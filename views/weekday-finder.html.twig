@@ -1,0 +1,31 @@
+{{ include('base.html.twig') }}
+
+<html>
+    <head>
+        <title>Find Day</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Weekday Name Finder</h1>
+            <form action="/" method="get">
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="number" maxlength="4" name="year">
+                    <label for="month">Month</label>
+                    <input type="number" maxlength="2" name="month">
+                    <label for="day">Day</label>
+                    <input type="number" maxlength="2" name="day">
+                    <button type="submit" class="btn">Find Your Day</button>
+                </div>
+                <br><br>
+                <div class="form-group">
+                    <label for="result">Weekday</label>
+                    <input type="text" name="result" size="16" placeholder="Example: Monday" readonly
+                    value="{{ result }}"
+                    >
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>

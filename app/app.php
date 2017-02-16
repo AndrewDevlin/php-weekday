@@ -12,7 +12,13 @@
     );
 
     $app->get('/', function() use ($app) {
-        return 'hello';
+
+        $result = '';
+        if ($_GET) {
+            $new_weekday = new Weekday();
+            $result = $new_weekday->WeekdayFinder($_GET["month"],$_GET["day"],$_GET["year"]);
+        }
+        return $app['twig']->render('weekday-finder.html.twig', array('result' => $result));
     });
 
     return $app;
